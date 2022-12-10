@@ -20,11 +20,20 @@ public class GreetingResource {
 
     @GET
 
-    //@Path("/me")
+    @Path("/user")
     @RolesAllowed("user")
     @NoCache
     @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello from RESTEasy Reactive";
+    public String helloUser() {
+        return "Hello " + securityIdentity.getPrincipal().getName() + " from RESTEasy Reactive";
+    }
+
+    @GET
+    @Path("/admin")
+    @RolesAllowed("admin")
+    @NoCache
+    @Produces(MediaType.TEXT_PLAIN)
+    public String helloAdmin() {
+        return "Hello " + securityIdentity.getPrincipal().getName() + " to the admin console from RESTEasy Reactive";
     }
 }
