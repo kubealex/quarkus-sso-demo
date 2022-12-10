@@ -7,7 +7,6 @@ import javax.ws.rs.core.MediaType;
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 
-import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.jboss.resteasy.reactive.NoCache;
 
 import io.quarkus.security.identity.SecurityIdentity;
